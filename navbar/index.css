@@ -1,0 +1,75 @@
+.navbar-main {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+}
+
+.toggle-button {
+    display: none; /* Initially hide the toggle button */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.toggle-button i {
+    font-size: 24px; /* Adjust the size of the toggle icon */
+}
+
+.navbar-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.navbar-content.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-content ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: green;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 767px) {
+    .navbar-content {
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar-content ul {
+        display: flex;
+        flex-direction: column; /* Display list items in columns */
+        padding: 0; /* Remove padding from the ul */
+    }
+
+    .navbar-content ul li {
+        padding: 1rem; /* Add padding to each list item */
+    }
+
+    .toggle-button {
+        color: black;
+        display: block; /* Display toggle button on mobile */
+    }
+
+    .navbar-content,
+    .nav-item {
+        display: none; /* Hide navbar content and list items by default on mobile */
+    }
+
+    .navbar-main.active .navbar-content,
+    .navbar-main.active .nav-item {
+        display: flex; /* Display navbar content and list items when navbar-main has the "active" class */
+        flex-direction: column; /* Stack items vertically */
+    }
+}
